@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portofolio | Aldan Collective</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body class="portfolio-page">
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="portfolio-header">
+
+        <!-- LOGO -->
+        <a href="index.html" class="portfolio-logo">
+            <img src="img/shared/logo.png" alt="Aldan Collective">
+        </a>
+
+
+        <!-- MENU -->
+        <nav class="portfolio-nav">
+
+            <a href="om-mig.html"
+               data-da="[Om mig]"
+               data-en="[About me]">
+                [Om mig]
+            </a>
+
+            <a href="portofolio.html"
+               data-da="[Portofolio]"
+               data-en="[Portfolio]">
+                [Portofolio]
+            </a>
+
+            <a href="booking.html"
+               data-da="[Booking]"
+               data-en="[Booking]">
+                [Booking]
+            </a>
+
+        </nav>
+
+
+        <!-- LANGUAGE -->
+        <div class="portfolio-language">
+
+            <button class="language active" id="da-btn">
+                DA
+            </button>
+
+            <span>/</span>
+
+            <button class="language" id="en-btn">
+                EN
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
+
+    <main class="portfolio-main">
+
+
+        <!-- TOP ROW -->
+
+        <section class="portfolio-top-row">
+
+
+            <!-- VPP -->
+
+            <a href="vpp.html" class="portfolio-case">
+
+                <h2>VPP FILM</h2>
+
+                <img
+                    src="img/shared/vpp.forside.png"
+                    alt="VPP Film case"
+                    class="portfolio-case-image"
+                >
+
+            </a>
+
+
+
+            <!-- LADY BALANCE -->
+
+            <a href="#" class="portfolio-case">
+
+                <h2>LADY BALANCE</h2>
+
+                <img
+                    src="img/shared/lb.forside.png"
+                    alt="Lady Balance case"
+                    class="portfolio-case-image"
+                >
+
+            </a>
+
+
+        </section>
+
+
+
+        <!-- CAREER CASE -->
+
+        <section class="portfolio-bottom-row">
+
+            <a href="career-case.html" class="portfolio-case portfolio-career-case">
+
+                <h2>KATRIN PRYCE</h2>
+
+                <img
+                    src="img/shared/career.case.forside.png"
+                    alt="Katrin Pryce Career Case Study"
+                    class="portfolio-case-image"
+                >
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+     <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-top">
+
+
+            <div>
+
+                <h3
+                    data-da="SIDER"
+                    data-en="PAGES"
+                >
+                    SIDER
+                </h3>
+
+                <a
+                    href="index.html"
+                    data-da="Forside"
+                    data-en="Home"
+                >
+                    Forside
+                </a>
+
+                <a
+                    href="om-mig.html"
+                    data-da="Om mig"
+                    data-en="About me"
+                >
+                    Om mig
+                </a>
+
+                <a
+                    href="portofolio.html"
+                    data-da="Portofolio"
+                    data-en="Portfolio"
+                >
+                    Portofolio
+                </a>
+
+                <a
+                    href="booking.html"
+                    data-da="Booking"
+                    data-en="Booking"
+                >
+                    Booking
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-da="SOCIALE MEDIER"
+                    data-en="SOCIAL MEDIA"
+                >
+                    SOCIALE MEDIER
+                </h3>
+
+                <div class="footer-social-text">
+
+                    <a href="https://www.instagram.com/katrinfagranes">Instagram</a>
+                    <a href="https://www.facebook.com/katrin.banderos/">Facebook</a>
+                    <a href="https://www.linkedin.com/in/katrin-pryce-5578b4224/">LinkedIn</a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-da="KONTAKT"
+                    data-en="CONTACT"
+                >
+                    KONTAKT
+                </h3>
+
+                <p>katrinfagranes@gmail.com</p>
+                <p>+45 60774548</p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-title">
+            ALDAN Collective
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         LANGUAGE SWITCH
+    ========================== -->
+
+    <script>
+
+        const daButton =
+            document.getElementById("da-btn");
+
+        const enButton =
+            document.getElementById("en-btn");
+
+
+        function changeLanguage(language) {
+
+            document.documentElement.lang = language;
+
+
+            document.querySelectorAll("[data-da]").forEach(element => {
+
+                element.textContent =
+                    element.dataset[language];
+
+            });
+
+
+            if (language === "da") {
+
+                daButton.classList.add("active");
+                enButton.classList.remove("active");
+
+            } else {
+
+                enButton.classList.add("active");
+                daButton.classList.remove("active");
+
+            }
+
+        }
+
+
+        daButton.addEventListener("click", () => {
+            changeLanguage("da");
+        });
+
+
+        enButton.addEventListener("click", () => {
+            changeLanguage("en");
+        });
+
+    </script>
+
+
+</body>
+
+</html>

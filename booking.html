@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking | Aldan Collective</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+    <!-- =========================
+         BOOKING PAGE
+    ========================== -->
+
+    <main class="booking-page">
+
+
+        <!-- HEADER -->
+
+        <header class="booking-header">
+
+            <a href="index.html" class="booking-logo">
+                <img
+                    src="img/shared/logo.png"
+                    alt="Aldan Collective logo"
+                >
+            </a>
+
+
+            <nav class="booking-menu">
+
+                <a
+                    href="om-mig.html"
+                    data-da="[Om mig]"
+                    data-en="[About me]"
+                >
+                    [Om mig]
+                </a>
+
+                <a
+                    href="portofolio.html"
+                    data-da="[Portofolio]"
+                    data-en="[Portfolio]"
+                >
+                    [Portofolio]
+                </a>
+
+                <a
+                    href="booking.html"
+                    data-da="[Booking]"
+                    data-en="[Booking]"
+                >
+                    [Booking]
+                </a>
+
+            </nav>
+
+
+            <!-- LANGUAGE -->
+
+            <div class="booking-language">
+
+                <button
+                    class="language active"
+                    id="da-btn"
+                >
+                    DA
+                </button>
+
+                <span>/</span>
+
+                <button
+                    class="language"
+                    id="en-btn"
+                >
+                    EN
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section class="booking-content">
+
+
+            <h1
+                data-da="SKAL VI ARBEJDE SAMMEN?"
+                data-en="SHALL WE WORK TOGETHER?"
+            >
+                SKAL VI ARBEJDE SAMMEN?
+            </h1>
+
+
+            <div class="booking-contact">
+
+                <div class="booking-contact-info">
+                <p>katrinfagranes@gmail.com</p>
+                <p>+45 60774548</p>
+                </div>
+
+            </div>
+
+
+
+           <!-- SOCIAL MEDIA -->
+
+<div class="booking-social">
+
+    <h2
+        data-da="SOCIALE MEDIER"
+        data-en="SOCIAL MEDIA"
+    >
+        SOCIALE MEDIER
+    </h2>
+
+
+    <div class="booking-social-links">
+
+        <a href="https://www.instagram.com/katrinfagranes"
+           target="_blank"
+           rel="noopener noreferrer">
+            Instagram
+        </a>
+
+        <a href="https://www.facebook.com/katrin.banderos/"
+           target="_blank"
+           rel="noopener noreferrer">
+            Facebook
+        </a>
+
+        <a href="https://www.linkedin.com/in/katrin-pryce-5578b4224/"
+           target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-top">
+
+
+            <div>
+
+                <h3
+                    data-da="SIDER"
+                    data-en="PAGES"
+                >
+                    SIDER
+                </h3>
+
+                <a
+                    href="index.html"
+                    data-da="Forside"
+                    data-en="Home"
+                >
+                    Forside
+                </a>
+
+                <a
+                    href="om-mig.html"
+                    data-da="Om mig"
+                    data-en="About me"
+                >
+                    Om mig
+                </a>
+
+                <a
+                    href="portofolio.html"
+                    data-da="Portofolio"
+                    data-en="Portfolio"
+                >
+                    Portofolio
+                </a>
+
+                <a
+                    href="booking.html"
+                    data-da="Booking"
+                    data-en="Booking"
+                >
+                    Booking
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-da="SOCIALE MEDIER"
+                    data-en="SOCIAL MEDIA"
+                >
+                    SOCIALE MEDIER
+                </h3>
+
+                <div class="footer-social-text">
+
+                    <a href="https://www.instagram.com/katrinfagranes">Instagram</a>
+                    <a href="https://www.facebook.com/katrin.banderos/">Facebook</a>
+                    <a href="https://www.linkedin.com/in/katrin-pryce-5578b4224/">LinkedIn</a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <h3
+                    data-da="KONTAKT"
+                    data-en="CONTACT"
+                >
+                    KONTAKT
+                </h3>
+
+                <p>katrinfagranes@gmail.com</p>
+                <p>+45 60774548</p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-title">
+            ALDAN Collective
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         LANGUAGE SWITCH
+    ========================== -->
+
+    <script>
+
+        const daButton = document.getElementById("da-btn");
+        const enButton = document.getElementById("en-btn");
+
+
+        function changeLanguage(language) {
+
+            document.documentElement.lang = language;
+
+
+            document
+                .querySelectorAll("[data-da]")
+                .forEach(element => {
+
+                    element.textContent =
+                        element.dataset[language];
+
+                });
+
+
+            if (language === "da") {
+
+                daButton.classList.add("active");
+                enButton.classList.remove("active");
+
+            }
+
+            else {
+
+                enButton.classList.add("active");
+                daButton.classList.remove("active");
+
+            }
+
+        }
+
+
+        daButton.addEventListener("click", () => {
+            changeLanguage("da");
+        });
+
+
+        enButton.addEventListener("click", () => {
+            changeLanguage("en");
+        });
+
+    </script>
+
+
+</body>
+</html>
